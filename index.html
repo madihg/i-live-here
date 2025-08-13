@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Crossroads Descent (Taper #15)</title>
+
+<!-- "Crossroads Descent" Copyright (C) 2025 Halim Madi
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright 
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+This is from Taper #15: Crossroads, Fall 2025:
+
+https://taper.badquar.to/15/crossroads_descent.html
+
+"Each step opens a gate: the deeper the descent, the darker the
+screen. You cannot skip ahead. You descend to remember, to discover,
+to play the keeper's game. The page becomes a staircase. The stairs
+become a text."
+
+*** BEGIN TEMPLATE INSTRUCTIONS ***
+* All poem code goes between the closing header and closing body tags
+below, and must not exceed 2KB (2048 bytes).
+* Without removing any template punctuation, insert your author name,
+poem title, and poem filename throughout the template, making sure your
+text, capitalization, and punctuation is consistent across the file.
+* Insert your creative statement above, wrapped to 72 characters, and 
+using typographical quotes "" and apostrophes ''.
+* Do not modify the template in any other way.
+*** END TEMPLATE INSTRUCTIONS ***
+
+-->
+
+<style>
+	body { margin:0 ; overflow:hidden }
+	a { color:#eee ; text-decoration:none }
+	header { margin:0 ; padding:0 ; background-color:#444 ; color:#bbb ;
+		position:relative ; z-index:1000 }
+	header > h1 { margin:0 ; font-size:12px ; font-family:sans-serif ;
+		border-bottom:1px #999 solid ; padding:5px 10px ; line-height:17px }
+</style>
+</head>
+<body>
+<header id=nav>
+	<h1>
+		<a href="prev.html">&lt;&lt;</a> &nbsp; 
+		<a href="index.html">Taper #15 :
+		Crossroads</a> : Fall 2025 &nbsp; 
+		<a href="next.html">&gt;&gt;</a><br>
+		<a href="crossroads_descent.html">"Crossroads Descent"</a> by
+		<a href="about.html#madi">Halim Madi</a>
+	</h1>
+</header>
+<!-- All poem code goes here, and must be less than or equal to 2048 bytes (not including closing </body> and </html> tags below)-->
+<style>
+body{overflow:auto;transition:background 1s}
+header{position:sticky;top:0}
+#w{position:relative}
+.b{position:absolute;min-height:40px;background:#fff;color:#222;padding:10px;border-radius:6px;cursor:pointer;opacity:.5;font:16px/1.5 serif;text-align:center;z-index:1;border:1px solid #ddd}
+.ok{opacity:1}
+.done{background:#111;color:#fff;z-index:99;border-color:#333}
+</style>
+<div id=w></div>
+<script>
+let r=1,x=10,y=70,w=Math.min(innerWidth*.9,380),h=55,dx=Math.min(60,innerWidth*.08),
+rl=innerWidth-w-20,W=document.getElementById('w'),cur=0,vg=65,
+T="This is a story of fire and dice, of loss and place|Like Orpheus descending. Don't look back or you too might vanish|June 2004: A 15-year-old theater kid in Beirut|Cousins' white Mercedes, gun in the door compartment|That hot June we slipped into a club called BO18|Karim, 6'5, had befriended the bouncer at the gym|One long handshake and we were inside the city's hottest club|We kissed foreigners. I danced with a boy for the first time.|The beat beat differently here.|But ... The story gets weirder|BO18 sits on the Karantina massacre grounds|A tomb and bunker: The roof opens for ghosts at night|By day it closes to offer them solace|Metal spines hang from the ceiling. The dancers are ghosts|Nightlife is nightmare and dream|The story gets weirder ... still|Bashir Gemayel who led the massacre|Became Lebanon's 8th president, then was assassinated|Millions mourned a genocidal fascist|'He was our only hope'|Hope metastasized into fatalism|Weirder still|June 2018: I move to the Tenderloin|There's no 13th floor. I live on the liminal 14th|The Hamilton: The first SF hotel to welcome people of color|I tell lovers Frida and Miles slept here. It works.|The story gets weirder|2020: The pandemic, the fentanyl crisis|The Hamilton, an ivory tower, becomes a moat|The penthouse lawyer sues the city|Hope metastasizes into fatalism, again|The story gets weirder|On Turk Street, I discover an Arab actor performing a 'Queer Jihad'|The space is called Counterpulse, a space where scandal becomes art|I become an artist in residence, part of the diasporic program|Then move in to live there, a year later|I live there now, even closer to the Tenderloin 'action'|My front yard isn't pretty, my neighbors aren't happy|No white fence, no American dream|But then again Katabasis is a stance against romance|A reminder the real utopias are the ones|that hold it all".split('|'),s='𓊍';
+for(let i=1;i<=42;i++){
+let d=document.createElement('div');
+d.className='b';
+d.style.cssText=`left:${x}px;top:${y}px;width:${w}px`;
+d.textContent=i==cur+1?s:'';
+d.onclick=()=>{
+if(i==cur+1){
+d.textContent=T[i-1]||'';
+d.classList.add('done','ok');
+cur=i;
+document.body.style.background=`rgb(${255-255*i/42},${255-255*i/42},${255-255*i/42})`;
+if(i<42)W.children[i].textContent=s,W.children[i].classList.add('ok');
+}};
+if(i==1)d.classList.add('ok');
+W.appendChild(d);
+let nx=x+r*dx;
+if(nx>rl||nx<10){r*=-1;y+=vg;nx=Math.max(10,Math.min(nx,rl))}
+x=nx;y+=vg}
+W.style.height=(y+200)+'px';
+addEventListener('resize',()=>location.reload())
+</script>
+</body>
+</html>
